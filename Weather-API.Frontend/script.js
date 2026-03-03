@@ -1,21 +1,25 @@
-const baseUrl = "http://localhost:5000";
+const button = document.getElementById('searchBtn');
+const resultDiv = document.getElementById('result');
 
-async function buscar() {
-    const city = document.getElementById("city").value;
+button.addEventListener('click', async () => {
+  const city = document.getElementById('cityInput').value;
 
+  if (!city) {
+    resultDiv.innerHTML = 'Digite uma cidade';
+    return;
+  }
+
+  try {
     const response = await fetch(`http://localhost:5000/api/weather/${city}`);
-    
-    if (response.ok) {
-        document.getElementById("result").innerHTML = "cidade não encontrada.";
-        return;
-    }
-
     const data = await response.json();
 
-    document.getElementById("result").innerHTML = 
-        `
-        <h2>${data.city}</h2>
-        <p>${data.temperature}°C</p>
-        <p>${data.description}</p>
-        `;
-}
+    resultDiv.innerHTML = `
+      <h2>${data.city}</h2>
+      <p>Temperatura: ${data.temperature}°C</p>
+      <p>Condição: ${data.description}</p>
+    `;
+
+  } catch (error) {
+    resultDiv.innerHTML = 'Erro ao buscar clima';
+  }
+});
