@@ -17,17 +17,17 @@ app.get('/', (req, res) => {
 app.get('/api/weather/:city', async (req, res) => {
   try {
     const city = req.params.city;
+    
+    const cityRegex = /^[A-Za-zÀ-ÿ\s-]+$/;
 
-    if (!city) {
-      return res.status(400).json({ error: 'Cidade é obrigatória' });
+    if (!cityRegex.test(city)) {
+      return res.status(400).json({ error: 'Nome de cidade inválido' });
     }
 
     const weather = await getWeather(city);
-
     res.json(weather);
 
   } catch (error) {
-    console.error(error.message);
     res.status(500).json({ error: 'Erro ao buscar clima' });
   }
 });

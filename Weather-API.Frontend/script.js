@@ -4,6 +4,13 @@ const resultDiv = document.getElementById('result');
 button.addEventListener('click', async () => {
   const city = document.getElementById('cityInput').value;
 
+  const cityRegex = /^[A-Za-zÀ-ÿ\s-]+$/;
+
+    if (!cityRegex.test(city)) {
+    resultDiv.innerHTML = 'Cidade inválida';
+    return;
+    }
+
   if (!city) {
     resultDiv.innerHTML = 'Digite uma cidade';
     return;

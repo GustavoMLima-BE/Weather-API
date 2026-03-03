@@ -11,6 +11,13 @@ async function getWeather(city) {
 
   const data = await response.json();
 
+  if (
+    data.resolvedAddress &&
+    !data.resolvedAddress.toLowerCase().includes(city.toLowerCase())
+    ) {
+    throw new Error('Cidade não encontrada');
+    }
+
   return {
     city: data.address,
     temperature: data.currentConditions.temp,
