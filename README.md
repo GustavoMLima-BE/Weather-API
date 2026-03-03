@@ -27,9 +27,6 @@ Weather-API/
 │   ├── index.html
 │   ├── script.js
 │   └── style.css
-```
-
----
 
 ## Tecnologias Utilizadas
 
@@ -83,3 +80,7 @@ Weather-API/
 - **index.html**: Página principal do frontend.
 - **script.js**: Lógica de interação com o backend.
 - **style.css**: Estilos da aplicação.
+
+- - Projeto feito como projeto para o roadmap backend https://roadmap.sh/projects/weather-api-wrapper-service
+- A de adicionar Redis
+- <img width="2048" height="1059" alt="image" src="https://github.com/user-attachments/assets/0c97037d-7315-421e-a213-f35de1f72c31" />
