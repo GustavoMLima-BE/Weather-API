@@ -7,7 +7,7 @@ O projeto Weather API é uma aplicação completa que fornece informações mete
 - **Frontend**: Uma interface simples em HTML, CSS e JavaScript para exibir as informações meteorológicas ao usuário.
 
 ## Estrutura do Projeto
-
+```
 Weather-API/
 ├── Weather-API.Backend/
 │   ├── appsettings.json
@@ -27,7 +27,7 @@ Weather-API/
 │   ├── index.html
 │   ├── script.js
 │   └── style.css
-
+```
 ## Tecnologias Utilizadas
 
 ### Backend
